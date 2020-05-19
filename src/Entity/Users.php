@@ -43,6 +43,11 @@ class Users implements UserInterface
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $pseudo;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -155,5 +160,22 @@ class Users implements UserInterface
         }
 
         return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->pseudo;
     }
 }
