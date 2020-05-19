@@ -251,6 +251,6 @@ class Articles
 
     public function __toString()
     {
-        return $this->users();
+        return $this->slug;
     }
 }
