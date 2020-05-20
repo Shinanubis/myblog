@@ -7,7 +7,16 @@
   <h1>Mon Blog</h1>
   <p>Ceci est la page d'accueil</p>
 
-  <p><a href="{{ path('actualites_articles') }}">Liste des articles</a></p>
+  
+  <h1>{{ article.titre }}</h1>
+  <p>{{ article.createdAt|date }}</p>
+  <div>{{ article.contenu|raw }}</div>
+
+  <p>Catégories :
+      {% for categorie in article.categories %}
+          {{ categorie.nom }}
+      {% endfor %}
+  </p>
 
 
 {% endblock %}

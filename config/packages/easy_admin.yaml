@@ -4,3 +4,4 @@ easy_admin:
         - App\Entity\Users
         - App\Entity\Articles
         - App\Entity\Categories
+        - App\Entity\MotsCles
